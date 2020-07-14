@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "645791625483",
+    "firebase_url": "https://qnetapp-92882.firebaseio.com",
+    "project_id": "qnetapp-92882",
+    "storage_bucket": "qnetapp-92882.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:645791625483:android:8b8640aecbd3ca4874b20e",
+        "android_client_info": {
+          "package_name": "com.qnetexam.qnetexan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "645791625483-01pn5bekjq5ndt2fd1k5fhc3tt4rgckr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.qnetexam.qnetexan",
+            "certificate_hash": "e5673d2d0ff520994fe2b83383137cf6f1bc97e5"
+          }
+        },
+        {
+          "client_id": "645791625483-3nmamba1l97br9pqetv8sv32c4fp44l4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcNClQg_VUtjdh0IdjXqHk5nQ2rb9vN5E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "645791625483-3nmamba1l97br9pqetv8sv32c4fp44l4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-3898675618700513~6692096049"
+    }
+  ],
+  "configuration_version": "1"
+}

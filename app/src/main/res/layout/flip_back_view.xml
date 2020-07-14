@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/back_card_image">
+
+    <TextView
+        android:id="@+id/answer_card"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:singleLine="false"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:text="버튼을 눌러주세요."
+        android:layout_margin="20sp"
+        tools:ignore="HardcodedText" />
+
+</RelativeLayout>

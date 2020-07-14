@@ -1,0 +1,2 @@
+rootProject.name='qnetExan'
+include ':app'

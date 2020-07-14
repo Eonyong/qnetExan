@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">qnetExan</string>
+    <string name="ad_id">ca-app-pub-3898675618700513~6692096049</string>
+    <string name="ad_sdk">ca-app-pub-3898675618700513/7333048271</string>
+    <string name="full_ad">ca-app-pub-3898675618700513/4060084888</string>
+    <string name="drawer_close">drawer_close</string>
+    <string name="drawer_open">drawer_open</string>
+</resources>
