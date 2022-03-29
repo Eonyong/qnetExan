@@ -1,5 +1,8 @@
 package com.qnetexam.qnetexan;
 
+import static com.qnetexam.qnetexan.R.*;
+
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.net.Uri;
@@ -32,13 +35,13 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
 
     private long backKeyPressedTime;
 
+    @SuppressLint("MissingPermission")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(layout.activity_main);
 
         //광고 뷰 생성
-        MobileAds.initialize(this, getString(R.string.ad_id));
         AdView adView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
@@ -46,13 +49,13 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
         //리사이클러뷰 생성
         final ArrayList<ProblemList> problemListArrayList = solveProblem();
         ProblemAdapter adapter = new ProblemAdapter(this, problemListArrayList);
-        RecyclerView recyclerView = findViewById(R.id.recycler_view);
+        RecyclerView recyclerView = findViewById(id.recycler_view);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
         recyclerView.setNestedScrollingEnabled(false);
 
         //사이드바 메뉴 호출 버튼
-        FloatingActionButton floatingActionButton = findViewById(R.id.side_bar_button);
+        FloatingActionButton floatingActionButton = findViewById(id.side_bar_button);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,15 +106,15 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
-        if (menuItem.getItemId() == R.id.quest_alert) {
+        if (menuItem.getItemId() == id.quest_alert) {
             Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
             startActivity(intent);
         }
-        else if (menuItem.getItemId() == R.id.card_game){
+        else if (menuItem.getItemId() == id.card_game){
             Intent intent = new Intent(getApplicationContext(), CardContainer.class);
             startActivity(intent);
         }
-        else if (menuItem.getItemId() == R.id.go_to_link){
+        else if (menuItem.getItemId() == id.go_to_link){
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.q-net.or.kr/man001.do?gSite=Q"));
             startActivity(intent);
         }
@@ -139,9 +142,9 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
     }
 
     private void initiator(){
-        drawerLayout = findViewById(R.id.drawer);
-        NavigationView navigationView = findViewById(R.id.navigation_header_container);
-        drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.drawer_open, R.string.drawer_close);
+        drawerLayout = findViewById(id.drawer);
+        NavigationView navigationView = findViewById(id.navigation_header_container);
+        drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, string.drawer_open, string.drawer_close);
         drawerLayout.addDrawerListener(drawerToggle);
         navigationView.setNavigationItemSelectedListener(this);
     }
