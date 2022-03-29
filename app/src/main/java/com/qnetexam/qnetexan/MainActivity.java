@@ -56,15 +56,12 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
 
         //사이드바 메뉴 호출 버튼
         FloatingActionButton floatingActionButton = findViewById(id.side_bar_button);
-        floatingActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (drawerLayout.isDrawerOpen(GravityCompat.START)){
-                    drawerLayout.closeDrawer(GravityCompat.START);
-                }
-                else{
-                    drawerLayout.openDrawer(GravityCompat.START);
-                }
+        floatingActionButton.setOnClickListener(v -> {
+            if (drawerLayout.isDrawerOpen(GravityCompat.START)){
+                drawerLayout.closeDrawer(GravityCompat.START);
+            }
+            else{
+                drawerLayout.openDrawer(GravityCompat.START);
             }
         });
         initiator();
@@ -106,11 +103,11 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
-        if (menuItem.getItemId() == id.quest_alert) {
-            Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
-            startActivity(intent);
-        }
-        else if (menuItem.getItemId() == id.card_game){
+//        if (menuItem.getItemId() == id.quest_alert) {
+//            Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
+//            startActivity(intent);
+//        }
+        if (menuItem.getItemId() == id.card_game){
             Intent intent = new Intent(getApplicationContext(), CardContainer.class);
             startActivity(intent);
         }

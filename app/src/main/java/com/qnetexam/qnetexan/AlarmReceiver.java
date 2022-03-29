@@ -1,6 +1,5 @@
 package com.qnetexam.qnetexan;
 
-import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -13,7 +12,6 @@ import android.os.Build;
 import androidx.core.app.NotificationCompat;
 
 import java.util.Calendar;
-import java.util.Date;
 
 public class AlarmReceiver extends BroadcastReceiver {
 
@@ -62,7 +60,7 @@ public class AlarmReceiver extends BroadcastReceiver {
             editor.putLong("nextNotifyTime", nextNotifyTime.getTimeInMillis());
             editor.apply();
 
-            Date currentDate = nextNotifyTime.getTime();
+            nextNotifyTime.getTime();
         }
 
     }

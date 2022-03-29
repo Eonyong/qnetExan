@@ -13,8 +13,8 @@ import java.util.ArrayList;
 
 public class ProblemAdapter extends RecyclerView.Adapter<ProblemAdapter.MyViewHolder> {
 
-    private LayoutInflater inflater;
-    private ArrayList<ProblemList> problemLists;
+    private final LayoutInflater inflater;
+    private final ArrayList<ProblemList> problemLists;
 
     public ProblemAdapter(Context context, ArrayList<ProblemList> problemLists){
 

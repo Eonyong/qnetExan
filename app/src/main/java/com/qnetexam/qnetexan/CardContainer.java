@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
@@ -17,7 +16,6 @@ public class CardContainer extends AppCompatActivity implements FragmentManager.
     private Bundle bundle;
     private Flip_Back_View flip_back_view = new Flip_Back_View();
     private Flip_Front_View flip_front_view = new Flip_Front_View();
-    private int clickNum = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,31 +46,27 @@ public class CardContainer extends AppCompatActivity implements FragmentManager.
             }
         });
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                clickNum++;
+        button.setOnClickListener(view -> {
 
-                int random = new Random().nextInt(questionList.length);
-                bundle = new Bundle();
-                bundle.putString("rndAns", answerList[random]);
-                bundle.putString("rndQue", questionList[random]);
-                flip_back_view = new Flip_Back_View();
-                flip_back_view.setArguments(bundle);
+            int random = new Random().nextInt(questionList.length);
+            bundle = new Bundle();
+            bundle.putString("rndAns", answerList[random]);
+            bundle.putString("rndQue", questionList[random]);
+            flip_back_view = new Flip_Back_View();
+            flip_back_view.setArguments(bundle);
 
-                flip_front_view = new Flip_Front_View();
-                flip_front_view.setArguments(bundle);
+            flip_front_view = new Flip_Front_View();
+            flip_front_view.setArguments(bundle);
 
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.card_container, flip_back_view)
-                        .commit();
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.card_container, flip_back_view)
+                    .commit();
 
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.card_container, flip_front_view)
-                        .commit();
-            }
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.card_container, flip_front_view)
+                    .commit();
         });
 
     }
